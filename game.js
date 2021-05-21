@@ -25,8 +25,16 @@ window.addEventListener('keypress', event => {
   }
 })
 
+let counter = 0
+
 // game loop
 function loop() {
+  counter += 1
+  if (counter % 250 === 0) {
+    let rock = new Rock()
+    rocks.push(rock)
+  }
+
   // check user input to change ship's angle and speed
   if (keyPressed['ArrowLeft'] == true) {
     ship.rotateLeft()
